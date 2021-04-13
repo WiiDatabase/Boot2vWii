@@ -1,0 +1,9 @@
+.idea/
+build/
+cmake-build-debug/
+*.elf
+*.rpx
+*.wuhb
+CMakeLists.txt
+.DS_Store
+Thumbs.db
