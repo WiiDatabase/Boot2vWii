@@ -33,3 +33,8 @@ Just specify them as compile time options after `make`! Supported parameters are
 **USB Loader GX** (UNEO):
 
     make TIDLOW=0x554e454f APP_NAME="USB Loader GX" AUTHOR="USB Loader GX Team" ICON="assets/usb-loader-gx.png"
+
+----
+**Nintendont** (WWND):
+
+    make TIDLOW=0x57574e44 APP_NAME="Nintendont" AUTHOR="FIX94" ICON="assets/nintendont.png"
