@@ -22,6 +22,8 @@ Just specify them as compile time options after `make`! Supported parameters are
 * `TIDHIGH`: First 8 chars of the title ID of the channel that you want to boot (defaults to `0x00010001`)
 * `TIDLOW`: Last 8 chars of the title ID of the channel that you want to boot (defaults to `0x44434f41`, which is the
   ConnectMii channel)
+* `DISPLAY`: Display mode of the booted vWii channel. Supported modes are: `TV`, `DRC` (GamePad) or `BOTH` (defaults
+  to `BOTH`). Note that it falls back to the GamePad if no TV is connected.
 
 ### Examples
 
@@ -35,6 +37,6 @@ Just specify them as compile time options after `make`! Supported parameters are
     make TIDLOW=0x554e454f APP_NAME="USB Loader GX" AUTHOR="USB Loader GX Team" ICON="assets/usb-loader-gx.png"
 
 ----
-**Nintendont** (WWND):
+**Nintendont** (WWND), but only on the TV:
 
-    make TIDLOW=0x57574e44 APP_NAME="Nintendont" AUTHOR="FIX94" ICON="assets/nintendont.png"
+    make TIDLOW=0x57574e44 APP_NAME="Nintendont" AUTHOR="FIX94" ICON="assets/nintendont.png" DISPLAY=TV

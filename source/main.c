@@ -10,6 +10,16 @@
 #define TIDLOW 0x44434f41 // DCOA (RC24 ConnectMii)
 #endif
 
+#ifndef DISPLAY
+#define DISPLAY BOTH
+#endif
+
+enum SCREEN_TYPE {
+    TV = 1,
+    DRC = 2,
+    BOTH = 3
+};
+
 extern int CMPTLaunchTitle(void *CMPTConfigure, int ConfigSize, int titlehigh, int titlelow);
 
 extern int CMPTAcctSetScreenType(int screenType);
@@ -19,11 +29,14 @@ extern int CMPTGetDataSize(int *dataSize);
 extern int CMPTCheckScreenState();
 
 int main(int argc, char **argv) {
-    CMPTAcctSetScreenType(3);
-    if (CMPTCheckScreenState() < 0) {
-        CMPTAcctSetScreenType(2);
-        if (CMPTCheckScreenState() < 0) {
-            CMPTAcctSetScreenType(1);
+    CMPTAcctSetScreenType(DISPLAY);
+
+    int screenState = CMPTCheckScreenState();
+    if (screenState < 0) {
+        if (screenState == -9) { // HDMI error
+            CMPTAcctSetScreenType(DRC);
+        } else {
+            return 0;
         }
     }
 

@@ -63,6 +63,10 @@ ifdef TIDLOW
     CFLAGS += -DTIDLOW=$(TIDLOW)
 endif
 
+ifdef DISPLAY
+    CFLAGS += -DDISPLAY=$(DISPLAY)
+endif
+
 #-------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level
 # containing include and lib
