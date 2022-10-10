@@ -1,6 +1,8 @@
 #include <malloc.h>
 #include <stdlib.h>
 #include <padscore/kpad.h>
+#include <coreinit/thread.h>
+#include <whb/proc.h>
 
 #ifndef TIDHIGH
 #define TIDHIGH 0x00010001
@@ -51,6 +53,12 @@ int main(int argc, char **argv) {
     void *databuf = memalign(0x40, dataSize);
     CMPTLaunchTitle(databuf, dataSize, TIDHIGH, TIDLOW);
     free(databuf);
+
+    WHBProcInit();
+    while(WHBProcIsRunning()) {     
+       OSSleepTicks(OSMillisecondsToTicks(100));
+    }
+    WHBProcShutdown();
 
     return 0;
 }
