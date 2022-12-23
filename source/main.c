@@ -16,7 +16,8 @@
 #define DISPLAY BOTH
 #endif
 
-enum SCREEN_TYPE {
+enum SCREEN_TYPE
+{
     TV = 1,
     DRC = 2,
     BOTH = 3
@@ -30,21 +31,27 @@ extern int CMPTGetDataSize(int *dataSize);
 
 extern int CMPTCheckScreenState();
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     CMPTAcctSetScreenType(DISPLAY);
 
     int screenState = CMPTCheckScreenState();
-    if (screenState < 0) {
-        if (screenState == -9) { // HDMI error
+    if (screenState < 0)
+    {
+        if (screenState == -9)
+        { // HDMI error
             CMPTAcctSetScreenType(DRC);
-        } else {
+        }
+        else
+        {
             return 0;
         }
     }
 
     int dataSize;
     int result = CMPTGetDataSize(&dataSize);
-    if (result < 0) {
+    if (result < 0)
+    {
         return 0;
     }
 
@@ -55,8 +62,9 @@ int main(int argc, char **argv) {
     free(databuf);
 
     WHBProcInit();
-    while(WHBProcIsRunning()) {     
-       OSSleepTicks(OSMillisecondsToTicks(100));
+    while (WHBProcIsRunning())
+    {
+        OSSleepTicks(OSMillisecondsToTicks(100));
     }
     WHBProcShutdown();
 
