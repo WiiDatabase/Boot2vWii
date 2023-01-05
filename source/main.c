@@ -26,7 +26,7 @@ enum SCREEN_TYPE {
     BOTH = 3
 };
 
-enum FORCE_RES {
+enum FORCERES {
     NONE = 0,
     P720 = 4,
     P480 = 3
