@@ -24,6 +24,8 @@ Just specify them as compile time options after `make`! Supported parameters are
   ConnectMii channel)
 * `DISPLAY`: Display mode of the booted vWii channel. Supported modes are: `TV`, `DRC` (GamePad) or `BOTH` (defaults
   to `BOTH`). Note that it falls back to the GamePad if no TV is connected.
+* `FORCERES`: Forces resolution when booting a vWii channel. Supported modes are: `NONE`, `P720` or `P480` (defaults
+  to `NONE`). Note that it only works with HDMI.
 
 ### Examples
 
