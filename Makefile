@@ -67,6 +67,10 @@ ifdef DISPLAY
     CFLAGS += -DDISPLAY=$(DISPLAY)
 endif
 
+ifdef FORCERES
+    CFLAGS += -DFORCERES=$(FORCERES)
+endif
+
 #-------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level
 # containing include and lib
