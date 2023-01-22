@@ -32,16 +32,16 @@ Just specify them as compile time options after `make`! Supported parameters are
 
 **WiiFlow** (DWFA):
 
-    make TIDLOW=0x44574641 APP_NAME="WiiFlow" AUTHOR="Fledge68" ICON="assets/wiiflow.png"
+    make TIDLOW=0x44574641 APP_NAME="WiiFlow" APP_AUTHOR="Fledge68" ICON="assets/wiiflow.png"
 
 ---
 
 **USB Loader GX** (UNEO):
 
-    make TIDLOW=0x554e454f APP_NAME="USB Loader GX" AUTHOR="USB Loader GX Team" ICON="assets/usb-loader-gx.png"
+    make TIDLOW=0x554e454f APP_NAME="USB Loader GX" APP_AUTHOR="USB Loader GX Team" ICON="assets/usb-loader-gx.png"
 
 ---
 
 **Nintendont** (WWND), but only on the TV:
 
-    make TIDLOW=0x57574e44 APP_NAME="Nintendont" AUTHOR="FIX94" ICON="assets/nintendont.png" DISPLAY=TV
+    make TIDLOW=0x57574e44 APP_NAME="Nintendont" APP_AUTHOR="FIX94" ICON="assets/nintendont.png" DISPLAY=TV
