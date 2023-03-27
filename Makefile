@@ -55,12 +55,8 @@ LDFLAGS	=	-g $(ARCH) $(RPXSPECS) -Wl,-Map,$(notdir $*.map)
 
 LIBS	:= -lwut
 
-ifdef TIDHIGH
-    CFLAGS += -DTIDHIGH=$(TIDHIGH)
-endif
-
-ifdef TIDLOW
-    CFLAGS += -DTIDLOW=$(TIDLOW)
+ifdef TID
+    CFLAGS += -DTID=$(TID)
 endif
 
 ifdef DISPLAY

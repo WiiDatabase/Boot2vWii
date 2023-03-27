@@ -5,12 +5,8 @@
 #include <stdlib.h>
 #include <whb/proc.h>
 
-#ifndef TIDHIGH
-#define TIDHIGH 0x00010001
-#endif
-
-#ifndef TIDLOW
-#define TIDLOW 0x44434f41 // DCOA (RC24 ConnectMii)
+#ifndef TID
+#define TID 0
 #endif
 
 #ifndef DISPLAY
@@ -72,7 +68,11 @@ int main(int argc, char **argv) {
     }
 
     void *databuf = memalign(0x40, dataSize);
-    CMPTLaunchTitle(databuf, dataSize, ((uint64_t) TIDHIGH << 32) | TIDLOW);
+    if (TID == 0) {
+        CMPTLaunchMenu(databuf, dataSize);
+    } else {
+        CMPTLaunchTitle(databuf, dataSize, TID);
+    }
     free(databuf);
 
     WHBProcInit();

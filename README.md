@@ -6,7 +6,7 @@ have "custom channels" that each boot different titles.
 ## How to use
 
 1. Install the current versions of devkitPPC, wut and wut-tools
-2. Run `make` to compile the standard title that boots the "ConnectMii" channel from RiiConnect24
+2. Run `make` to compile the standard title that boots the Wii Menu
 3. Copy the resulting `wuhb` to `SD://wiiu/apps/`
 4. Run `make clean` to delete the generated files before you build another channel!
 
@@ -20,9 +20,7 @@ Just specify them as compile time options after `make`! Supported parameters are
 - `ICON`: Path to a 128x128 PNG used as Wii U Menu icon
 - `TV_SPLASH`: Path to a 1280x720 PNG used as the TV's splash screen
 - `DRC_SPLASH`: Path to a 854x480 PNG used as the Wii U GamePad's splash screen
-- `TIDHIGH`: First 8 chars of the title ID of the channel that you want to boot (defaults to `0x00010001`)
-- `TIDLOW`: Last 8 chars of the title ID of the channel that you want to boot (defaults to `0x44434f41`, which is the
-  ConnectMii channel)
+- `TID`: Title ID of the channel that you want to boot (defaults to `0`, the Wii Menu)
 - `DISPLAY`: Display mode of the booted vWii channel. Supported modes are: `TV`, `DRC` (GamePad) or `BOTH` (defaults
   to `BOTH`). Note that it falls back to the GamePad if no TV is connected.
 - `FORCERES`: Forces resolution when booting a vWii channel. Supported modes are: `NONE`, `P720` or `P480` (defaults
@@ -32,16 +30,16 @@ Just specify them as compile time options after `make`! Supported parameters are
 
 **WiiFlow** (DWFA):
 
-    make TIDLOW=0x44574641 APP_NAME="WiiFlow" APP_AUTHOR="Fledge68" ICON="assets/wiiflow.png"
+    make TID=0x0001000144574641 APP_NAME="WiiFlow" APP_AUTHOR="Fledge68" ICON="assets/wiiflow.png"
 
 ---
 
 **USB Loader GX** (UNEO):
 
-    make TIDLOW=0x554e454f APP_NAME="USB Loader GX" APP_AUTHOR="USB Loader GX Team" ICON="assets/usb-loader-gx.png"
+    make TID=0x00010001554e454f APP_NAME="USB Loader GX" APP_AUTHOR="USB Loader GX Team" ICON="assets/usb-loader-gx.png"
 
 ---
 
 **Nintendont** (WWND), but only on the TV:
 
-    make TIDLOW=0x57574e44 APP_NAME="Nintendont" APP_AUTHOR="FIX94" ICON="assets/nintendont.png" DISPLAY=TV
+    make TID=0x0001000157574e44 APP_NAME="Nintendont" APP_AUTHOR="FIX94" ICON="assets/nintendont.png" DISPLAY=TV
