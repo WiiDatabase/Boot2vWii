@@ -7,3 +7,4 @@ cmake-build-debug/
 CMakeLists.txt
 .DS_Store
 Thumbs.db
+.vscode/settings.json
