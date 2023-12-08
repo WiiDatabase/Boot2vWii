@@ -13,7 +13,7 @@ TOPDIR ?= $(CURDIR)
 # APP_SHORTNAME sets the short name of the application
 # APP_AUTHOR sets the author of the application
 #-------------------------------------------------------------------------------
-APP_NAME	:= Boot2vWii ConnectMii
+APP_NAME	:= Boot2vWii
 #APP_SHORTNAME	:= Boot2vWii
 APP_AUTHOR	:= Brawl345
 
