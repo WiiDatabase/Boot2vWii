@@ -59,8 +59,8 @@ ifdef TID
     CFLAGS += -DTID=$(TID)
 endif
 
-ifdef DISPLAY
-    CFLAGS += -DDISPLAY=$(DISPLAY)
+ifdef DISPLAY_ON
+    CFLAGS += -DDISPLAY_ON=$(DISPLAY_ON)
 endif
 
 ifdef FORCERES

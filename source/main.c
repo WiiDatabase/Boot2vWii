@@ -9,8 +9,8 @@
 #define TID 0
 #endif
 
-#ifndef DISPLAY
-#define DISPLAY BOTH
+#ifndef DISPLAY_ON
+#define DISPLAY_ON BOTH
 #endif
 
 #ifndef FORCERES
@@ -44,7 +44,7 @@ void set_video_mode() {
 }
 
 int main(int argc, char **argv) {
-    CMPTAcctSetScreenType(DISPLAY);
+    CMPTAcctSetScreenType(DISPLAY_ON);
 
     int screenState = CMPTCheckScreenState();
     if (screenState < 0) {

@@ -21,12 +21,18 @@ Just specify them as compile time options after `make`! Supported parameters are
 - `TV_SPLASH`: Path to a 1280x720 PNG used as the TV's splash screen
 - `DRC_SPLASH`: Path to a 854x480 PNG used as the Wii U GamePad's splash screen
 - `TID`: Title ID of the channel that you want to boot (defaults to `0`, the Wii Menu)
-- `DISPLAY`: Display mode of the booted vWii channel. Supported modes are: `TV`, `DRC` (GamePad) or `BOTH` (defaults
+- `DISPLAY_ON`: Display mode of the booted vWii channel. Supported modes are: `TV`, `DRC` (GamePad) or `BOTH` (defaults
   to `BOTH`). Note that it falls back to the GamePad if no TV is connected.
 - `FORCERES`: Forces resolution when booting a vWii channel. Supported modes are: `NONE`, `P720` or `P480` (defaults
   to `NONE`). Note that it only works with HDMI.
 
 ### Examples
+
+**Wii Menu**:
+
+    make TID=0x0001000144574641 APP_NAME="Wii Menu"
+
+---
 
 **WiiFlow** (DWFA):
 
@@ -42,4 +48,4 @@ Just specify them as compile time options after `make`! Supported parameters are
 
 **Nintendont** (WWND), but only on the TV:
 
-    make TID=0x0001000157574e44 APP_NAME="Nintendont" APP_AUTHOR="FIX94" ICON="assets/nintendont.png" DISPLAY=TV
+    make TID=0x0001000157574e44 APP_NAME="Nintendont" APP_AUTHOR="FIX94" ICON="assets/nintendont.png" DISPLAY_ON=TV
