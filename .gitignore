@@ -4,6 +4,7 @@ cmake-build-debug/
 *.elf
 *.rpx
 *.wuhb
+*.lst
 CMakeLists.txt
 .DS_Store
 Thumbs.db
