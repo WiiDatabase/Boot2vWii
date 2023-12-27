@@ -3,6 +3,8 @@
 Boots any vWii channel and skips all Wiimote prompts! This is meant to be compiled manually and used with Aroma so you
 have "custom channels" that each boot different titles.
 
+**⚠️⚠️⚠️ Boot2vWii is NOT a "VC inject". It's a simple forwarder that uses official Nintendo functions to boot Wii channels. Therefore it will NEVER support VC inject features like "controlling the channel with the GamePad". ⚠️⚠️⚠️**
+
 ## How to use
 
 1. Install the current versions of devkitPPC, wut and wut-tools
