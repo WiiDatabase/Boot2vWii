@@ -32,7 +32,7 @@ Just specify them as compile time options after `make`! Supported parameters are
 
 **Wii Menu**:
 
-    make TID=0x0001000144574641 APP_NAME="Wii Menu"
+    make APP_NAME="Wii Menu"
 
 ---
 
