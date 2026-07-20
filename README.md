@@ -12,6 +12,24 @@ have "custom channels" that each boot different titles.
 3. Copy the resulting `wuhb` to `SD://wiiu/apps/`
 4. Run `make clean` to delete the generated files before you build another channel!
 
+### With Docker
+
+Build the image once, then run `make` inside it with the repo mounted. The resulting `wuhb` lands in the current directory.
+
+```sh
+docker build -t boot2vwii .
+
+# Standard Wii Menu forwarder
+docker run --rm -v "$PWD:/Boot2vWii" boot2vwii
+
+# A custom forwarder (any make parameters from below work)
+docker run --rm -v "$PWD:/Boot2vWii" boot2vwii \
+  TID=0x0001000144574641 APP_NAME="WiiFlow" APP_AUTHOR="Fledge68" ICON="assets/wiiflow.png"
+
+# Clean generated files before building another channel
+docker run --rm -v "$PWD:/Boot2vWii" boot2vwii clean
+```
+
 ## Booting other channels
 
 Just specify them as compile time options after `make`! Supported parameters are:
